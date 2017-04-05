@@ -8,6 +8,7 @@ import javax.swing.*;
  * Creates the JFrame and handles all related actions relating to the GUI.
  *
  * No functions.
+ *
  * Javadocs created by dandreas on 4/4/17.
  */
 
