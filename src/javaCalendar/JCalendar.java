@@ -13,6 +13,7 @@ public class JCalendar
 {
 	public static void main(String[] args)
 	{
-		
+		CFrame frame = new CFrame();
+		frame.setVisible(true);
 	}
 }
