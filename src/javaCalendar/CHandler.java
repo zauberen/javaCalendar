@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date; // For time handling.
 import java.util.HashMap;
+import java.util.Set;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -19,18 +20,16 @@ import javax.swing.JTextField;
  * Assigned to: Isaac (isaacwalth)
  * Superclass to JEventIO.
  * This class handles calendar events. It allows you to both edit and add events.
- *
  * Required Variables:
  * HashMap<Date,String> jEventList: Stores all of the events. Info on HashMaps: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
- *
  * Functions:
  * done   boolean checkForEvents(Calendar): Checks if there are any events that occur on the given date.
- * 
  * Hashmap<Date,String> getEvents(Date): Return all events that occur on the given date.
  * 
  * donishh void editEvent(Calendar,String): Replaces an old event from the hashmap.
- *
+ * 
  * Javadocs created by dandreas on 4/4/17.
+ * 
  * @param <hours>
  */
 
@@ -48,15 +47,18 @@ public class CHandler extends JFrame implements ActionListener
     	else
     	{
     		return true;
-    	}
-       
-    	
+    	}   	
     }
-
     public HashMap<String,String> getEvents(Calendar date)
-    {
-    	
-    	
+    {   	
+    	Set<String> keys = hash.keySet();
+		String message2 = null;
+    for(String key: keys){
+
+      message2=("your event at "+key+" is: "+hash.get(key));
+
+    }
+    label.setText(message2);
      return  new HashMap<>(hash) ;
      
     	//  return new HashMap<>(); //TODO: dummy return, replace me
@@ -66,18 +68,13 @@ public class CHandler extends JFrame implements ActionListener
     
     HashMap<String, String> hash = new HashMap<String, String>(); 
     JLabel label=new JLabel ("please select a time, and what event");
-    	String label2;
+    	
     	//identifying hours
     	JTextField text=new JTextField();
     	String[] hours = { "1AM", "2AM", "3AM", "4AM", "5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM", "2PM", "3PM", "4PM", "5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM" };
-
-
     	JComboBox list = new JComboBox(hours);
     	JButton button=new JButton("enter");
-    
- 
-    
-    	
+
     	public CHandler(){
     		super();
     		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -253,17 +250,17 @@ public class CHandler extends JFrame implements ActionListener
     		hash.put(hours[22], event);
     		hash.put(hours[23], event);
     		hash.put(hours[24], event);
-    		String message1=(" you event at "+list.getSelectedItem() + " "+hash.get(hours[hour]) ); 		
+    		String message1=(" you event at "+list.getSelectedItem() ); 		
     		label.setVisible(true);
     		label.setText(message1);    		
     		button.setText("edit");
+    	
     		list.setVisible(false);
     	}
     	//launch from here
     	
     public void editEvent(Calendar time)
     {
-    	
     	CHandler aFrame= new CHandler();
     	final int width=300;
     		final int height =200;
@@ -271,7 +268,6 @@ public class CHandler extends JFrame implements ActionListener
     		aFrame.setVisible(true);
     		aFrame.setVisible(true);
     		time.get(hour);
-    		
     		time.isSet(hour);
     		time.set(Calendar.HOUR_OF_DAY,hour);
     		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
