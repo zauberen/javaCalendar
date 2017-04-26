@@ -462,35 +462,26 @@ public class CFrame  extends JFrame
         int day = 1;
         Calendar tempDate = date;
 
-        for(int i = 0; i < dayButtons.length; i++)
-        {
+        for (int i = 0; i < dayButtons.length; i++) {
             String output = "";
             int c = 9999;
 
-            if (i < 7)
-            {
-                if (i == 0)
-                {
+            if (i < 7) {
+                if (i == 0) {
                     tempDate.set(Calendar.DATE, 1);
                     day = tempDate.get(Calendar.DAY_OF_WEEK);
                     tempDate.set(Calendar.MONTH, tempDate.get(Calendar.MONTH) - 1);
                     dayButtons[i].setEnabled(true);
                 }
-                if (day > i + 1)
-                {
+                if (day > i + 1) {
                     c = this.getDaysInMonth(tempDate) - (day - i - 2);
                     dayButtons[i].setEnabled(false);
-                }
-                else
-                {
+                } else {
                     c = i - day + 2;
                     dayButtons[i].setEnabled(true);
                 }
-            }
-            else
-            {
-                if (i < daysInMonth + day)
-                {
+            } else {
+                if (i < daysInMonth + day) {
                     c = i - day + 2;
                 /* This if would add a * at the end of the date when there is an event. Currently breaks
                  * the button actionlistener, so unfortunately we will have to do without for now
@@ -498,9 +489,7 @@ public class CFrame  extends JFrame
                     output = c + "*";
                 */
                     dayButtons[i].setEnabled(true);
-                }
-                else
-                {
+                } else {
                     c = i - day + 1 - daysInMonth;
                     dayButtons[i].setEnabled(false);
                 }
