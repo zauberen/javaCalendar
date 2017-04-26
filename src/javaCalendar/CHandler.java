@@ -9,6 +9,7 @@ import java.util.Date; // For time handling.
 import java.util.HashMap;
 import java.util.Set;
 
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -70,11 +71,11 @@ public class CHandler extends JFrame implements ActionListener
     JLabel label=new JLabel ("please select a time, and what event");
     	
     	//identifying hours
-    	JTextField text=new JTextField();
+    	JTextField text=new JTextField(20);
     	String[] hours = { "1AM", "2AM", "3AM", "4AM", "5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM", "2PM", "3PM", "4PM", "5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM" };
     	JComboBox list = new JComboBox(hours);
     	JButton button=new JButton("enter");
-
+    	JButton close= new JButton("close");
     	public CHandler(){
     		super();
     		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,10 +92,181 @@ public class CHandler extends JFrame implements ActionListener
     		add(label);	
     		add(list);
     		add(text);
+    		add(close);
     	add(button,BorderLayout.NORTH);
     	list.setSelectedIndex(0);
-    	button.addActionListener(this);
+    	button.addActionListener((new AbstractAction() {
+    		
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	if(list.getSelectedItem()=="1AM"  )
+        		{
+        			hour =1;
+        		}
+        		else if(list.getSelectedItem()=="2AM")
+        		{
+        			hour=2;
+
+        		}
+        		else if(list.getSelectedItem()=="3AM")
+        		{
+        			hour=3;
+
+        		}
+        		else if(list.getSelectedItem()=="4AM")
+        		{
+        			hour=4;
+
+        		}
+        		else if(list.getSelectedItem()=="5AM")
+        		{
+        			hour=5;
+
+        		}
+        		else if(list.getSelectedItem()=="6AM")
+        		{
+        			hour=6;
+
+        		}
+        		else if(list.getSelectedItem()=="7AM")
+        		{
+        			hour=7;
+
+        		}
+        		else if(list.getSelectedItem()=="8AM")
+        		{
+        			hour=8;
+
+        		}
+        		else if(list.getSelectedItem()=="9AM")
+        		{
+        			hour=9;
+     
+        		}
+        		else if(list.getSelectedItem()=="10AM")
+        		{
+        			hour=10;
+        		}
+        		else if(list.getSelectedItem()=="11AM")
+        		{
+        			hour=11;
+        	
+        		}
+        		else if(list.getSelectedItem()=="12AM")
+        		{
+        			hour=12;
+        		}
+        		else if(list.getSelectedItem()=="1PM")
+        		{
+        			hour=13;
+
+        		}
+        		else if(list.getSelectedItem()=="2PM")
+        		{
+        			hour=14;
+
+        		}
+        		else if(list.getSelectedItem()=="3PM")
+        		{
+        			hour=15;
+
+        		}
+        		else if(list.getSelectedItem()=="4PM")
+        		{
+        			hour=16;
+
+        		}
+        		else if(list.getSelectedItem()=="5PM")
+        		{
+        			hour=17;
+
+        		}
+        		else if(list.getSelectedItem()=="6PM")
+        		{
+        			hour=18;
+
+        		}
+        		else if(list.getSelectedItem()=="7PM")
+        		{
+        			hour=19;
+
+        		}
+        		else if(list.getSelectedItem()=="8PM")
+        		{
+        			hour=20;
+
+        		}
+        		else if(list.getSelectedItem()=="9PM")
+        		{
+        			hour=21;
+
+        		}
+        		else if(list.getSelectedItem()=="10PM")
+        		{
+        			hour=22;
+
+        		}
+        		
+        		else if(list.getSelectedItem()=="11PM")
+        		{
+        			hour=23;
+
+        		}
+        		else if(list.getSelectedItem()=="12PM")
+        		{
+        			hour=24;
+        		}
+        		
+        		
+        		
+        		//gets the event to submit it
+        		String event =text.getText();    		
+        		hash.put(hours[0],event);
+        		hash.put(hours[1], event);
+        		hash.put(hours[2], event);
+        		hash.put(hours[3], event);
+        		hash.put(hours[4], event);
+        		hash.put(hours[5], event);
+        		hash.put(hours[6], event);
+        		hash.put(hours[7], event);
+        		hash.put(hours[8], event);
+        		hash.put(hours[9], event);
+        		hash.put(hours[10], event);
+        		hash.put(hours[11], event);
+        		hash.put(hours[12], event);
+        		hash.put(hours[13], event);
+        		hash.put(hours[14], event);
+        		hash.put(hours[15], event);
+        		hash.put(hours[16], event);
+        		hash.put(hours[17], event);
+        		hash.put(hours[18], event);
+        		hash.put(hours[19], event);
+        		hash.put(hours[20], event);
+        		hash.put(hours[21], event);
+        		hash.put(hours[22], event);
+        		hash.put(hours[23], event);
+
+        		String message1=("exit when satisfied. but you event at "+list.getSelectedItem() ); 		
+        		Set<String> keys = hash.keySet();
+    			String message2 = null;
+            for(String key: keys){
+
+              message2=("exit when done. but your event at "+key+" is: "+hash.get(key));
+
+            }
+        		label.setVisible(true);
+        		label.setText(message2);    		
+        		button.setText("edit");
+        		
+        		list.setVisible(false);
+
+            	
+        
+
+            }
+        }));
     	text.addActionListener(this);
+    	close.addActionListener(this);
     	}
     	 
     	
@@ -102,168 +274,10 @@ public class CHandler extends JFrame implements ActionListener
     	public void actionPerformed(ActionEvent e) {
     		
     		//converting the stringed combobox into an integer 
+    		this.dispose();
     		
-    		if(list.getSelectedItem()=="1AM"  )
-    		{
-    			hour =1;
-    		}
-    		else if(list.getSelectedItem()=="2AM")
-    		{
-    			hour=2;
-
-    		}
-    		else if(list.getSelectedItem()=="3AM")
-    		{
-    			hour=3;
-
-    		}
-    		else if(list.getSelectedItem()=="4AM")
-    		{
-    			hour=4;
-
-    		}
-    		else if(list.getSelectedItem()=="5AM")
-    		{
-    			hour=5;
-
-    		}
-    		else if(list.getSelectedItem()=="6AM")
-    		{
-    			hour=6;
-
-    		}
-    		else if(list.getSelectedItem()=="7AM")
-    		{
-    			hour=7;
-
-    		}
-    		else if(list.getSelectedItem()=="8AM")
-    		{
-    			hour=8;
-
-    		}
-    		else if(list.getSelectedItem()=="9AM")
-    		{
-    			hour=9;
- 
-    		}
-    		else if(list.getSelectedItem()=="10AM")
-    		{
-    			hour=10;
-    		}
-    		else if(list.getSelectedItem()=="11AM")
-    		{
-    			hour=11;
+    		    	}
     	
-    		}
-    		else if(list.getSelectedItem()=="12AM")
-    		{
-    			hour=12;
-    		}
-    		else if(list.getSelectedItem()=="1PM")
-    		{
-    			hour=13;
-
-    		}
-    		else if(list.getSelectedItem()=="2PM")
-    		{
-    			hour=14;
-
-    		}
-    		else if(list.getSelectedItem()=="3PM")
-    		{
-    			hour=15;
-
-    		}
-    		else if(list.getSelectedItem()=="4PM")
-    		{
-    			hour=16;
-
-    		}
-    		else if(list.getSelectedItem()=="5PM")
-    		{
-    			hour=17;
-
-    		}
-    		else if(list.getSelectedItem()=="6PM")
-    		{
-    			hour=18;
-
-    		}
-    		else if(list.getSelectedItem()=="7PM")
-    		{
-    			hour=19;
-
-    		}
-    		else if(list.getSelectedItem()=="8PM")
-    		{
-    			hour=20;
-
-    		}
-    		else if(list.getSelectedItem()=="9PM")
-    		{
-    			hour=21;
-
-    		}
-    		else if(list.getSelectedItem()=="10PM")
-    		{
-    			hour=22;
-
-    		}
-    		
-    		else if(list.getSelectedItem()=="11PM")
-    		{
-    			hour=23;
-
-    		}
-    		else if(list.getSelectedItem()=="12PM")
-    		{
-    			hour=24;
-    		}
-    		
-    		
-    		
-    		//gets the event to submit it
-    		String event =text.getText();    		
-    		hash.put(hours[0],event);
-    		hash.put(hours[1], event);
-    		hash.put(hours[2], event);
-    		hash.put(hours[3], event);
-    		hash.put(hours[4], event);
-    		hash.put(hours[5], event);
-    		hash.put(hours[6], event);
-    		hash.put(hours[7], event);
-    		hash.put(hours[8], event);
-    		hash.put(hours[9], event);
-    		hash.put(hours[10], event);
-    		hash.put(hours[11], event);
-    		hash.put(hours[12], event);
-    		hash.put(hours[13], event);
-    		hash.put(hours[14], event);
-    		hash.put(hours[15], event);
-    		hash.put(hours[16], event);
-    		hash.put(hours[17], event);
-    		hash.put(hours[18], event);
-    		hash.put(hours[19], event);
-    		hash.put(hours[20], event);
-    		hash.put(hours[21], event);
-    		hash.put(hours[22], event);
-    		hash.put(hours[23], event);
-
-    		String message1=("exit when satisfied. but you event at "+list.getSelectedItem() ); 		
-    		Set<String> keys = hash.keySet();
-			String message2 = null;
-        for(String key: keys){
-
-          message2=("exit when done. but your event at "+key+" is: "+hash.get(key));
-
-        }
-    		label.setVisible(true);
-    		label.setText(message2);    		
-    		button.setText("edit");
-    		
-    		list.setVisible(false);
-    	}
     	//launch from here
     	
     public void editEvent(Calendar time)
@@ -276,8 +290,12 @@ public class CHandler extends JFrame implements ActionListener
     		aFrame.setVisible(true);
     		time.get(hour);
     		time.isSet(hour);
+    		
     		time.set(Calendar.HOUR_OF_DAY,hour);
     		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
+    		
+    		
+    		
     		//	time.set(Calendar.HOUR, hash.get(hours[hour]) );
     		
     
