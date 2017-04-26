@@ -225,7 +225,7 @@ public class CHandler extends JFrame implements ActionListener
     		
     		//gets the event to submit it
     		String event =text.getText();    		
-    		
+    		hash.put(hours[0],event);
     		hash.put(hours[1], event);
     		hash.put(hours[2], event);
     		hash.put(hours[3], event);
@@ -249,12 +249,19 @@ public class CHandler extends JFrame implements ActionListener
     		hash.put(hours[21], event);
     		hash.put(hours[22], event);
     		hash.put(hours[23], event);
-    		hash.put(hours[24], event);
-    		String message1=(" you event at "+list.getSelectedItem() ); 		
+
+    		String message1=("exit when satisfied. but you event at "+list.getSelectedItem() ); 		
+    		Set<String> keys = hash.keySet();
+			String message2 = null;
+        for(String key: keys){
+
+          message2=("exit when done. but your event at "+key+" is: "+hash.get(key));
+
+        }
     		label.setVisible(true);
-    		label.setText(message1);    		
+    		label.setText(message2);    		
     		button.setText("edit");
-    	
+    		
     		list.setVisible(false);
     	}
     	//launch from here
