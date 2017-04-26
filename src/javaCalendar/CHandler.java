@@ -1,5 +1,6 @@
 package javaCalendar;
 
+import java.util.Calendar;
 import java.util.Date; // For time handling.
 import java.util.HashMap;
 
@@ -22,24 +23,24 @@ import java.util.HashMap;
 
 public class CHandler
 {
-    HashMap<Date,String> jEventList = new HashMap<>();
+    HashMap<Calendar,String> jEventList = new HashMap<>();
 
-    public boolean checkForEvents(Date date)
+    public boolean checkForEvents(Calendar date)
     {
         return true; //TODO: dummy return, replace me
     }
 
-    public HashMap<Date,String> getEvents(Date date)
+    public HashMap<Calendar,String> getEvents(Calendar date)
     {
         return new HashMap<>(); //TODO: dummy return, replace me
     }
 
-    public void newEvent(Date time, String description)
+    public void newEvent(Calendar time)
     {
-
+        time.set(Calendar.HOUR,23);
     }
 
-    public void editEvent(Date time,String description)
+    public void editEvent(Calendar time)
     {
 
     }
