@@ -13,22 +13,30 @@ import java.nio.file.attribute.FileAttribute;
  * Javadocs created by dandreas on 4/4/17.*/
 public class JEventIO extends CHandler
 {
-    public static Object open(String path)throws Exception
+    public static Object open()throws Exception
     {
-//    	Path path = Paths.get(".\\..\\jEventList");
-		ObjectInputStream file = new ObjectInputStream(new FileInputStream(path));
-		Object jEventList = file.readObject();
-		file.close();
-		return jEventList;
+			ObjectInputStream file = new ObjectInputStream(new FileInputStream(path));
+			Object jEventList = file.readObject();
+			file.close();
+			return jEventList;
     }
-    public static void save(Object obj, String path)throws Exception
+    public static void save()
     {
     	makeDirectory();
     	createFile();
-		ObjectOutputStream snip = new ObjectOutputStream(new FileOutputStream(path));
-		snip.writeObject(obj);
-		snip.flush();
-		snip.close();
+
+    	try
+		{
+			ObjectOutputStream snip = new ObjectOutputStream(new FileOutputStream(path));
+			snip.writeObject(obj);
+			snip.flush();
+			snip.close();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+
+		}
     }
     public static void makeDirectory()//Creates a directory for jCalendar Application IF it does not exist
     {
