@@ -231,10 +231,12 @@ public class CHandler extends JFrame implements ActionListener
         		label.setText(message1);    		
         		button.setText("edit");
         		list.setVisible(false);
+        	
         		
         		
             }
         }));
+    	
     	text.addActionListener(this);
     	close.addActionListener(this);
     	
@@ -259,10 +261,11 @@ public class CHandler extends JFrame implements ActionListener
     		aFrame.setSize(width,height);
     		aFrame.setVisible(true);
     		aFrame.setVisible(true);
+    		
     		time.get(hour);
     		time.isSet(hour);
     		
-    	//	time.set(Calendar.HOUR_OF_DAY,hour);
+    		time.set(Calendar.HOUR_OF_DAY,hour);
     		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
     		
     		
@@ -271,4 +274,5 @@ public class CHandler extends JFrame implements ActionListener
     		
     
     }
+
 }
