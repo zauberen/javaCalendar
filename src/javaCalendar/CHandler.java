@@ -100,120 +100,121 @@ public class CHandler extends JFrame implements ActionListener
     		
             @Override
             public void actionPerformed(ActionEvent e) {
-            	if(list.getSelectedItem()=="1AM"  )
+            	
+            	if(list.getSelectedItem()=="1AM "  )
         		{
         			hour =1;
         		}
-        		else if(list.getSelectedItem()=="2AM")
+        		else if(list.getSelectedItem()=="2AM ")
         		{
         			hour=2;
 
         		}
-        		else if(list.getSelectedItem()=="3AM")
+        		else if(list.getSelectedItem()=="3AM ")
         		{
         			hour=3;
 
         		}
-        		else if(list.getSelectedItem()=="4AM")
+        		else if(list.getSelectedItem()=="4AM ")
         		{
         			hour=4;
 
         		}
-        		else if(list.getSelectedItem()=="5AM")
+        		else if(list.getSelectedItem()=="5AM ")
         		{
         			hour=5;
 
         		}
-        		else if(list.getSelectedItem()=="6AM")
+        		else if(list.getSelectedItem()=="6AM ")
         		{
         			hour=6;
 
         		}
-        		else if(list.getSelectedItem()=="7AM")
+        		else if(list.getSelectedItem()=="7AM ")
         		{
         			hour=7;
 
         		}
-        		else if(list.getSelectedItem()=="8AM")
+        		else if(list.getSelectedItem()=="8AM ")
         		{
         			hour=8;
 
         		}
-        		else if(list.getSelectedItem()=="9AM")
+        		else if(list.getSelectedItem()=="9AM ")
         		{
         			hour=9;
      
         		}
-        		else if(list.getSelectedItem()=="10AM")
+        		else if(list.getSelectedItem()=="10AM ")
         		{
         			hour=10;
         		}
-        		else if(list.getSelectedItem()=="11AM")
+        		else if(list.getSelectedItem()=="11AM ")
         		{
         			hour=11;
         	
         		}
-        		else if(list.getSelectedItem()=="12AM")
+        		else if(list.getSelectedItem()=="12AM ")
         		{
         			hour=12;
         		}
-        		else if(list.getSelectedItem()=="1PM")
+        		else if(list.getSelectedItem()=="1PM ")
         		{
         			hour=13;
 
         		}
-        		else if(list.getSelectedItem()=="2PM")
+        		else if(list.getSelectedItem()=="2PM ")
         		{
         			hour=14;
 
         		}
-        		else if(list.getSelectedItem()=="3PM")
+        		else if(list.getSelectedItem()=="3PM ")
         		{
         			hour=15;
 
         		}
-        		else if(list.getSelectedItem()=="4PM")
+        		else if(list.getSelectedItem()=="4PM ")
         		{
         			hour=16;
 
         		}
-        		else if(list.getSelectedItem()=="5PM")
+        		else if(list.getSelectedItem()=="5PM ")
         		{
         			hour=17;
 
         		}
-        		else if(list.getSelectedItem()=="6PM")
+        		else if(list.getSelectedItem()=="6PM ")
         		{
         			hour=18;
 
         		}
-        		else if(list.getSelectedItem()=="7PM")
+        		else if(list.getSelectedItem()=="7PM ")
         		{
         			hour=19;
 
         		}
-        		else if(list.getSelectedItem()=="8PM")
+        		else if(list.getSelectedItem()=="8PM ")
         		{
         			hour=20;
 
         		}
-        		else if(list.getSelectedItem()=="9PM")
+        		else if(list.getSelectedItem()=="9PM ")
         		{
         			hour=21;
 
         		}
-        		else if(list.getSelectedItem()=="10PM")
+        		else if(list.getSelectedItem()=="10PM ")
         		{
         			hour=22;
 
         		}
         		
-        		else if(list.getSelectedItem()=="11PM")
+        		else if(list.getSelectedItem()=="11PM ")
         		{
         			hour=23;
 
         		}
-        		else if(list.getSelectedItem()=="12PM")
+        		else if(list.getSelectedItem()=="12PM ")
         		{
         			hour=24;
         		}
@@ -231,6 +232,7 @@ public class CHandler extends JFrame implements ActionListener
         		label.setText(message1);    		
         		button.setText("edit");
         		list.setVisible(false);
+        	close.setEnabled(true);
         	
         		
         		
@@ -265,7 +267,7 @@ public class CHandler extends JFrame implements ActionListener
     		time.get(hour);
     		time.isSet(hour);
     		
-    		time.set(Calendar.HOUR_OF_DAY,hour);
+    	//	time.set(Calendar.HOUR_OF_DAY,hour);
     		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
     		
     		
@@ -274,5 +276,5 @@ public class CHandler extends JFrame implements ActionListener
     		
     
     }
-
+   
 }
