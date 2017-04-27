@@ -56,15 +56,48 @@ public class CHandler extends JFrame implements ActionListener
     }
     public HashMap<String,String> getEvents(Calendar date)
     {   	
+    	
     	Set<String> keys = hash.keySet();
-		String message2 = null;
-    for(String key: keys)
+    		HashMap<String,String> hasher=new HashMap<String,String>();
+    		String days = "";
+        	String months="";
+        String years="";
+    int day=   CHandler.currentDate.get(Calendar.DATE);
+    if(day<10)
     {
-      message2=("your event at "+key+" is: "+hash.get(key));
-
+    	days=("0"+day);
     }
-    label.setText(message2);
-     return  hash ;
+    else
+    {
+    	days=""+day;
+    }
+    int  month = CHandler.currentDate.get(Calendar.MONTH);
+    if (month<10)
+    {
+    	months=("0"+month);
+    }
+    else
+    {
+    	months=""+month;
+    }
+    int year=CHandler.currentDate.get(Calendar.YEAR);        	
+  years=""+year;
+    String sethour;    	
+  
+        String sDate =(days+months+years);
+        	
+        	
+    		
+    	for(String key: keys)
+    {
+    	if (key.contains(sDate))
+    	{
+    		hasher.put(key, hash.get(key));
+    	}
+    	
+    	
+    }
+     return  hasher ;
      
     	//  return new HashMap<>(); //TODO: dummy return, replace me
     }
