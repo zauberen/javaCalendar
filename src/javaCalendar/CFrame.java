@@ -337,70 +337,16 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
-        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 1) + " Year: " + currentMonth.get(Calendar.YEAR));
+        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 2) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 
-    public void fillCalendar(Calendar date)
-    {
-        currentMonth = date;
-        int daysInMonth = getDaysInMonth(date);
-        int day = 1;
-        Calendar tempDate = date;
-
-        for(int i = 0; i < dayButtons.length; i++)
-        {
-            String output = "";
-            int c = 9999;
-
-            if (i < 7)
-            {
-                if (i == 0)
-                {
-                    tempDate.set(Calendar.DATE, 1);
-                    day = tempDate.get(Calendar.DAY_OF_WEEK);
-                    tempDate.set(Calendar.MONTH, tempDate.get(Calendar.MONTH) - 1);
-                }
-                if (day > i + 1)
-                {
-                    c = this.getDaysInMonth(tempDate) - (day - i - 2);
-                    dayButtons[i].setEnabled(false);
-                }
-                else
-                {
-                    c = i - day + 2;
-                }
-            }
-            else
-            {
-                if (i < daysInMonth + day)
-                {
-                    c = i - day + 2;
-                /* This if would add a * at the end of the date when there is an event. Currently breaks
-                 * the button actionlistener, so unfortunately we will have to do without for now
-                if (events.checkForEvents(new Date(date.get(Calendar.YEAR),date.get(Calendar.MONTH),c-1)))
-                    output = c + "*";
-                */
-                }
-                else
-                {
-                    c = i - day + 1 - daysInMonth;
-                    dayButtons[i].setEnabled(false);
-                }
-            }
-
-            output += c;
-
-            dayButtons[i].setText(output);
-        }
-
-    }
 
     public void backCalendar()
     {
         Calendar date = currentMonth;
-        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH) - 1);
+        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH));
 
-        int daysInMonth = getDaysInMonth(date);
+        int daysInMonth = getDaysInMonth(date) - 1;
         int day = 1;
         Calendar tempDate = date;
 
@@ -452,15 +398,15 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
-        jDate.setText("Month: " + currentMonth.get(Calendar.MONTH) + " Year: " + currentMonth.get(Calendar.YEAR));
+        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 2) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 
     public void forwardCalendar()
     {
         Calendar date = currentMonth;
-        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH) + 1);
+        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH) + 2);
 
-        int daysInMonth = getDaysInMonth(date);
+        int daysInMonth = getDaysInMonth(date) - 1;
         int day = 1;
         Calendar tempDate = date;
 
@@ -501,6 +447,6 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
-        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 1) + " Year: " + currentMonth.get(Calendar.YEAR));
+        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 2) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 }
