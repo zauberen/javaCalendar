@@ -453,7 +453,7 @@ public class CFrame  extends JFrame
     public void forwardCalendar()
     {
         Calendar date = currentMonth;
-        date.set(Calendar.MONTH, date.get(Calendar.MONTH) + 1);
+        date.set(Calendar.MONTH, date.get(Calendar.MONTH) );
 
         int daysInMonth = getDaysInMonth(date);
         int day = 1;
