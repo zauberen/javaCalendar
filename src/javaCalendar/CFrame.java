@@ -32,6 +32,7 @@ public class CFrame  extends JFrame
     JButton save = new JButton("Save");
     JButton next = new JButton("Next");
     JButton prev = new JButton("Previous");
+    JLabel jDate = new JLabel();
 
     // for the event panel
     JButton newEvent = new JButton("New/Edit");
@@ -113,7 +114,7 @@ public class CFrame  extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 events.editEvent(currentMonth);
-                gotoEventPanel();
+                gotoCalendarPanel();
             }
         }));
 
