@@ -55,12 +55,11 @@ public class CHandler extends JFrame implements ActionListener
     	Set<String> keys = hash.keySet();
 		String message2 = null;
     for(String key: keys){
-
       message2=("your event at "+key+" is: "+hash.get(key));
 
     }
     label.setText(message2);
-     return  new HashMap<>(hash) ;
+     return  hash ;
      
     	//  return new HashMap<>(); //TODO: dummy return, replace me
     }
@@ -76,6 +75,7 @@ public class CHandler extends JFrame implements ActionListener
     	JComboBox list = new JComboBox(hours);
     	JButton button=new JButton("enter");
     	JButton close= new JButton("close");
+    	JLabel label2= new JLabel(""+hash);
     	public CHandler(){
     		super();
     		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,6 +92,7 @@ public class CHandler extends JFrame implements ActionListener
     		add(label);	
     		add(list);
     		add(text);
+    		add(label2);
     		add(close);
     	add(button,BorderLayout.NORTH);
     	list.setSelectedIndex(0);
@@ -249,24 +250,24 @@ public class CHandler extends JFrame implements ActionListener
         		String message1=("exit when satisfied. but you event at "+list.getSelectedItem() ); 		
         		Set<String> keys = hash.keySet();
     			String message2 = null;
-            for(String key: keys){
-
+         
+    			for(String key: keys){
+    			
+    				label2.setText(hash.get(key));
               message2=("exit when done. but your event at "+key+" is: "+hash.get(key));
 
             }
         		label.setVisible(true);
-        		label.setText(message2);    		
+        		label.setText(message1);    		
         		button.setText("edit");
-        		
         		list.setVisible(false);
-
-            	
-        
-
+        		
+        		
             }
         }));
     	text.addActionListener(this);
     	close.addActionListener(this);
+    	
     	}
     	 
     	
