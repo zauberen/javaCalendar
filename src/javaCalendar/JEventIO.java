@@ -1,4 +1,5 @@
 package javaCalendar;
+import javax.swing.*;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.file.*;
@@ -18,14 +19,16 @@ public class JEventIO extends CHandler
 {
     public static void open()
     {
-		Path file = Paths.get ("c:\\jCalendarEvents");
+		Path file = Paths.get ("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
+
+        JOptionPane.showMessageDialog(null, "This be !!!!!!!! ");
 	}
     public static void save()
     {
-    	createFile();
+    	//createFile();
 
-			Path file = Paths.get("C:jCalendarEvents\\");
-			String key = "dd/mm/yy/hhmm?M, " + System.getProperty("line.separator"); // waiting to work this out
+			Path file = Paths.get("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
+			String key = "0000000000" + System.getProperty("line.separator"); // waiting to work this out
 			byte[] data = key.getBytes();
 			ByteBuffer buffer = ByteBuffer.wrap(data);
 		final int NUMREC = 64;
@@ -34,13 +37,14 @@ public class JEventIO extends CHandler
 		{
 			OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
-			for(int count = 0; count < NUMREC; ++count)
-				// writer.write();
+			for(int count = 0; count < NUMREC; ++count) writer.write(key, 0, key.length());
 			writer.close();
 
 		}
 		catch (IOException e)
 		{
+            JOptionPane.showMessageDialog(null, "This be ??????? ");
+
 			e.printStackTrace();
 
 		}
@@ -48,7 +52,7 @@ public class JEventIO extends CHandler
 
     public static void createFile()//Creates an empty jEventList file IF it does not exist.
     {
-    	File fileX = new File("jEventList");
+    	File fileX = new File("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
     	try
 		{
 			fileX.createNewFile();
