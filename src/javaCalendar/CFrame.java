@@ -177,10 +177,13 @@ public class CFrame  extends JFrame
             calendarPanel.add(dayButtons[i]);
         }
 
+        jDate.setText("Month: " + currentMonth.get(Calendar.MONTH) + " Year: " + currentMonth.get(Calendar.YEAR));
+
         calendarPanel.add(load);
         calendarPanel.add(save);
         calendarPanel.add(prev);
         calendarPanel.add(next);
+        calendarPanel.add(jDate);
 
         fillCalendar();
         // end calendar panel
@@ -282,7 +285,7 @@ public class CFrame  extends JFrame
     {
         Calendar date = Calendar.getInstance();
         currentMonth = date;
-        int daysInMonth = getDaysInMonth(date);
+        int daysInMonth = getDaysInMonth(date) - 1;
         int day = 1;
         Calendar tempDate = date;
 
@@ -334,6 +337,7 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
+        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 1) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 
     public void fillCalendar(Calendar date)
@@ -394,7 +398,7 @@ public class CFrame  extends JFrame
     public void backCalendar()
     {
         Calendar date = currentMonth;
-        date.set(Calendar.MONTH, date.get(Calendar.MONTH) - 1);
+        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH) - 1);
 
         int daysInMonth = getDaysInMonth(date);
         int day = 1;
@@ -448,12 +452,13 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
+        jDate.setText("Month: " + currentMonth.get(Calendar.MONTH) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 
     public void forwardCalendar()
     {
         Calendar date = currentMonth;
-        date.set(Calendar.MONTH, date.get(Calendar.MONTH) );
+        date.set(Calendar.MONTH, currentMonth.get(Calendar.MONTH) + 1);
 
         int daysInMonth = getDaysInMonth(date);
         int day = 1;
@@ -496,5 +501,6 @@ public class CFrame  extends JFrame
 
             dayButtons[i].setText(output);
         }
+        jDate.setText("Month: " + (currentMonth.get(Calendar.MONTH) + 1) + " Year: " + currentMonth.get(Calendar.YEAR));
     }
 }
