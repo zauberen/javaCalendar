@@ -17,20 +17,25 @@ import static java.nio.file.StandardOpenOption.CREATE;
  * Javadocs created by dandreas on 4/4/17.*/
 public class JEventIO extends CHandler
 {
-    public static void open()
-    {
-		Path file = Paths.get ("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
+	public static void open()
+	{
+		Path file = Paths.get ("c:\\users\\jCalendarEvents.txt");
 
-        JOptionPane.showMessageDialog(null, "This be !!!!!!!! ");
+		JOptionPane.showMessageDialog(null, "This be !!!!!!!! ");
 	}
-    public static void save()
-    {
-    	//createFile();
+	public static void save()
+	{
+		Path file = Paths.get("c:\\users\\jCalendarEvents.txt");
+		String key = "0000000000" + System.getProperty("line.separator");
+		final int RECSIZE = key.length();
+	}
 
-			Path file = Paths.get("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
-			String key = "0000000000" + System.getProperty("line.separator"); // waiting to work this out
-			byte[] data = key.getBytes();
-			ByteBuffer buffer = ByteBuffer.wrap(data);
+	public static void createFile()
+	{
+		Path file = Paths.get("c:\\users\\jCalendarEvents.txt");
+		String key = "0000000000" + System.getProperty("line.separator");
+		byte[] data = key.getBytes();
+		ByteBuffer buffer = ByteBuffer.wrap(data);
 		final int NUMREC = 64;
 
 		try
@@ -43,23 +48,10 @@ public class JEventIO extends CHandler
 		}
 		catch (IOException e)
 		{
-            JOptionPane.showMessageDialog(null, "This be ??????? ");
+			JOptionPane.showMessageDialog(null, "This be ??????? ");
 
 			e.printStackTrace();
 
 		}
-    }
-
-    public static void createFile()//Creates an empty jEventList file IF it does not exist.
-    {
-    	File fileX = new File("C:\\..\\...\\Documents\\jCalendarEvents.txt\\");
-    	try
-		{
-			fileX.createNewFile();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-    }
+	}
 }
