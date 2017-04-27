@@ -246,19 +246,28 @@ public class CHandler extends JFrame implements ActionListener
     }
     else
     {
-    	
+    	days=""+day;
     }
     int  month = CHandler.currentDate.get(Calendar.MONTH);
     if (month<10)
     {
     	months=("0"+month);
     }
+    else
+    {
+    	months=""+month;
+    }
     int year=CHandler.currentDate.get(Calendar.YEAR);        	
-    String sethour = ""+hour;    	
+  years=""+year;
+    String sethour;    	
     if(hour<10)
     {
-    	sethour=("0");
+    	sethour=("0"+hour);
     	
+    }
+    else
+    {
+    	sethour=""+hour;
     }
         String key=(sethour+days+months+years);
         hash.put(key, event);
