@@ -34,7 +34,7 @@ public class CFrame  extends JFrame
     JButton prev = new JButton("Previous");
 
     // for the event panel
-    JButton newEvent = new JButton("New");
+    JButton newEvent = new JButton("New/Edit");
     JButton back = new JButton("Back");
 
     // CardPanel setup
@@ -46,7 +46,7 @@ public class CFrame  extends JFrame
     JPanel calendarPanel = new JPanel(calendarLayout);
 
     // eventPanel Setup
-    GridLayout eventLayout = new GridLayout(0,2);
+    GridLayout eventLayout = new GridLayout(0,1);
     JPanel eventPanel = new JPanel(eventLayout);
 
     // Create instance of the event handler
@@ -113,6 +113,7 @@ public class CFrame  extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 events.editEvent(currentMonth);
+                gotoEventPanel();
             }
         }));
 
@@ -200,18 +201,13 @@ public class CFrame  extends JFrame
         Set setEvents = hashEvents.entrySet();
         Object[] arrayEvents = setEvents.toArray();
 
+        JLabel jDescr = new JLabel("Date/Description");
+        eventPanel.add(jDescr);
+
         for (int i = 0; i < hashEvents.size(); i++)
         {
             JLabel description = new JLabel(arrayEvents[i].toString());
-            JButton eventButton = new JButton(i + "");
-            eventButton.addActionListener((new AbstractAction() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-
-                }
-            }));
             eventPanel.add(description);
-            eventPanel.add(eventButton);
         }
         eventPanel.add(back);
         eventPanel.add(newEvent);
