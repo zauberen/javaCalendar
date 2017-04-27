@@ -31,7 +31,7 @@ import javax.swing.JTextField;
  * 
  * Javadocs created by dandreas on 4/4/17.
  * 
- * @param <hours>
+ * 
  */
 
 public class CHandler extends JFrame implements ActionListener
@@ -66,16 +66,16 @@ public class CHandler extends JFrame implements ActionListener
     	//THIS this gives the integer for the year/month/date
     	//time.get(Calendar.YEAR,MONTH,DATE),
     
-    HashMap<String, String> hash = new HashMap<String, String>(); 
+   static HashMap<String, String> hash = new HashMap<String, String>(); 
     JLabel label=new JLabel ("please select a time, and what event");
     	
     	//identifying hours
     	JTextField text=new JTextField(20);
-    	String[] hours = { "1AM", "2AM", "3AM", "4AM", "5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM", "2PM", "3PM", "4PM", "5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM" };
+    	String[] hours = { "1AM ", "2AM ", "3AM ", "4AM ", "5AM ","6AM ","7AM ","8AM ","9AM ","10AM ","11AM ","12AM ","1PM ", "2PM ", "3PM ", "4PM ", "5PM ","6PM ","7PM ","8PM ","9PM ","10PM ","11PM ","12PM " };
     	JComboBox list = new JComboBox(hours);
     	JButton button=new JButton("enter");
     	JButton close= new JButton("close");
-    	JLabel label2= new JLabel(""+hash);
+    	
     	public CHandler(){
     		super();
     		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,7 +92,7 @@ public class CHandler extends JFrame implements ActionListener
     		add(label);	
     		add(list);
     		add(text);
-    		add(label2);
+    		
     		add(close);
     	add(button,BorderLayout.NORTH);
     	list.setSelectedIndex(0);
@@ -222,41 +222,11 @@ public class CHandler extends JFrame implements ActionListener
         		
         		//gets the event to submit it
         		String event =text.getText();    		
-        		hash.put(hours[0],event);
-        		hash.put(hours[1], event);
-        		hash.put(hours[2], event);
-        		hash.put(hours[3], event);
-        		hash.put(hours[4], event);
-        		hash.put(hours[5], event);
-        		hash.put(hours[6], event);
-        		hash.put(hours[7], event);
-        		hash.put(hours[8], event);
-        		hash.put(hours[9], event);
-        		hash.put(hours[10], event);
-        		hash.put(hours[11], event);
-        		hash.put(hours[12], event);
-        		hash.put(hours[13], event);
-        		hash.put(hours[14], event);
-        		hash.put(hours[15], event);
-        		hash.put(hours[16], event);
-        		hash.put(hours[17], event);
-        		hash.put(hours[18], event);
-        		hash.put(hours[19], event);
-        		hash.put(hours[20], event);
-        		hash.put(hours[21], event);
-        		hash.put(hours[22], event);
-        		hash.put(hours[23], event);
+        	hash.put(hours[hour-1], event);
+        	
 
-        		String message1=("exit when satisfied. but you event at "+list.getSelectedItem() ); 		
-        		Set<String> keys = hash.keySet();
-    			String message2 = null;
-         
-    			for(String key: keys){
-    			
-    				label2.setText(hash.get(key));
-              message2=("exit when done. but your event at "+key+" is: "+hash.get(key));
-
-            }
+        		String message1=(""+hash); 		
+        		
         		label.setVisible(true);
         		label.setText(message1);    		
         		button.setText("edit");
@@ -292,7 +262,7 @@ public class CHandler extends JFrame implements ActionListener
     		time.get(hour);
     		time.isSet(hour);
     		
-    		time.set(Calendar.HOUR_OF_DAY,hour);
+    	//	time.set(Calendar.HOUR_OF_DAY,hour);
     		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
     		
     		
