@@ -3,6 +3,9 @@ import java.io.*;
 import java.nio.file.*;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
+
+import static java.nio.file.StandardOpenOption.CREATE;
+
 /** JEventIO Class
  * Assigned to: Charles (cws2017)
  * Subclass to CHandler
@@ -13,43 +16,41 @@ import java.nio.file.attribute.FileAttribute;
  * Javadocs created by dandreas on 4/4/17.*/
 public class JEventIO extends CHandler
 {
-    public static Object open()throws Exception
-    {
-			ObjectInputStream file = new ObjectInputStream(new FileInputStream(path));
-			Object jEventList = file.readObject();
-			file.close();
-			return jEventList;
-    }
-    public static void save()
-    {
-    	makeDirectory();
-    	createFile();
-
-    	try
-		{
-			ObjectOutputStream snip = new ObjectOutputStream(new FileOutputStream(path));
-			snip.writeObject(obj);
-			snip.flush();
-			snip.close();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-
-		}
-    }
-    public static void makeDirectory()//Creates a directory for jCalendar Application IF it does not exist
+    public static void open()
     {
     	try
 		{
 			Path path = Files.createDirectory(FileSystems.getDefault().getPath
-						("c:\\jCalendarEvents"),  new FileAttribute<?>[0] );
+					("c:\\jCalendarEvents"), new FileAttribute<?>[0]);
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
+	}
+    public static void save()
+    {
+    	createFile();
+    	final int NUMREC = 64;
+
+    	try
+		{
+			Path file = Paths.get("C:jCalendarEvents\\");
+			String key = "";
+			OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+			for(int count =0; count < NUMREC; ++count)
+				// writer.write();
+			writer.close();
+
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+
+		}
     }
+
     public static void createFile()//Creates an empty jEventList file IF it does not exist.
     {
     	File fileX = new File("jEventList");
