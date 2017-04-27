@@ -27,28 +27,26 @@ public class CFrame  extends JFrame
     final int FRAME_WIDTH = 800;
     final int FRAME_HEIGHT = 600;
 
-    // MenuBar setup
-    JMenuBar menuBar;
-
     // for the calendar panel
-    JMenuItem load = new JMenu("Load");
-    JMenuItem next = new JMenu("Next");
-    JMenuItem prev = new JMenu("Previous");
+    JButton load = new JButton("Load");
+    JButton save = new JButton("Save");
+    JButton next = new JButton("Next");
+    JButton prev = new JButton("Previous");
 
     // for the event panel
-    JMenuItem save = new JMenu("Save");
-    JMenuItem back = new JMenu("Back");
+    JButton newEvent = new JButton("New");
+    JButton back = new JButton("Back");
 
     // CardPanel setup
     JPanel cardPanel = new JPanel(new CardLayout()); // Holds the calendar and event panels
     CardLayout cardPanelLayout;
 
     // CalendarPanel setup
-    GridLayout calendarLayout = new GridLayout(7,7); // Layout for the calendar panel
+    GridLayout calendarLayout = new GridLayout(8,7); // Layout for the calendar panel
     JPanel calendarPanel = new JPanel(calendarLayout);
 
     // eventPanel Setup
-    GridLayout eventLayout = new GridLayout(0,3);
+    GridLayout eventLayout = new GridLayout(0,2);
     JPanel eventPanel = new JPanel(eventLayout);
 
     // Create instance of the event handler
@@ -67,20 +65,33 @@ public class CFrame  extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // end frame
 
-        // Set up the menubar
-        menuBar = new JMenuBar();
+        // Set up the old menubar options
 
         load.addActionListener((new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                events.open("");
+                try
+                {
+                    events.open();
+                }
+                catch (Exception e)
+                {
+
+                }
             }
         }));
 
         save.addActionListener((new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                events.save("");
+                try
+                {
+                    events.save();
+                }
+                catch (Exception e)
+                {
+
+                }
             }
         }));
 
@@ -98,21 +109,20 @@ public class CFrame  extends JFrame
             }
         }));
 
+        newEvent.addActionListener((new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                events.editEvent(currentMonth);
+            }
+        }));
+
         back.addActionListener((new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 gotoCalendarPanel();
             }
         }));
-
-        menuBar.add(load);
-        menuBar.add(save);
-        menuBar.add(prev);
-        menuBar.add(next);
-        menuBar.add(back);
-
-        this.setJMenuBar(menuBar);
-        // end menubar
+        // end
 
         // Set up the calendar panel
         JLabel sun = new JLabel("Sunday");
@@ -164,6 +174,12 @@ public class CFrame  extends JFrame
             }));
             calendarPanel.add(dayButtons[i]);
         }
+
+        calendarPanel.add(load);
+        calendarPanel.add(save);
+        calendarPanel.add(prev);
+        calendarPanel.add(next);
+
         fillCalendar();
         // end calendar panel
 
@@ -178,12 +194,27 @@ public class CFrame  extends JFrame
 
     public void gotoEventPanel()
     {
-        load.setEnabled(false);
-        save.setEnabled(false);
-        next.setEnabled(false);
-        prev.setEnabled(false);
+        eventPanel.removeAll();
 
-        back.setEnabled(true);
+        HashMap<String,String> hashEvents = events.getEvents(currentMonth);
+        Set setEvents = hashEvents.entrySet();
+        Object[] arrayEvents = setEvents.toArray();
+
+        for (int i = 0; i < hashEvents.size(); i++)
+        {
+            JLabel description = new JLabel(arrayEvents[i].toString());
+            JButton eventButton = new JButton(i + "");
+            eventButton.addActionListener((new AbstractAction() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+                }
+            }));
+            eventPanel.add(description);
+            eventPanel.add(eventButton);
+        }
+        eventPanel.add(back);
+        eventPanel.add(newEvent);
 
         cardPanelLayout = (CardLayout)(cardPanel.getLayout());
         cardPanelLayout.show(cardPanel,"Event");
@@ -191,13 +222,6 @@ public class CFrame  extends JFrame
 
     public void gotoCalendarPanel()
     {
-        load.setEnabled(true);
-        save.setEnabled(true);
-        next.setEnabled(true);
-        prev.setEnabled(true);
-
-        back.setEnabled(false);
-
         cardPanelLayout = (CardLayout)(cardPanel.getLayout());
         cardPanelLayout.show(cardPanel,"Calendar");
     }
@@ -277,6 +301,7 @@ public class CFrame  extends JFrame
                     tempDate.set(Calendar.DATE, 1);
                     day = tempDate.get(Calendar.DAY_OF_WEEK);
                     tempDate.set(Calendar.MONTH, tempDate.get(Calendar.MONTH) - 1);
+                    dayButtons[i].setEnabled(true);
                 }
                 if (day > i + 1)
                 {
@@ -286,6 +311,7 @@ public class CFrame  extends JFrame
                 else
                 {
                     c = i - day + 2;
+                    dayButtons[i].setEnabled(true);
                 }
             }
             else
@@ -298,6 +324,7 @@ public class CFrame  extends JFrame
                 if (events.checkForEvents(new Date(date.get(Calendar.YEAR),date.get(Calendar.MONTH),c-1)))
                     output = c + "*";
                 */
+                    dayButtons[i].setEnabled(true);
                 }
                 else
                 {
@@ -388,6 +415,7 @@ public class CFrame  extends JFrame
                     tempDate.set(Calendar.DATE, 1);
                     day = tempDate.get(Calendar.DAY_OF_WEEK);
                     tempDate.set(Calendar.MONTH, tempDate.get(Calendar.MONTH) - 1);
+                    dayButtons[i].setEnabled(true);
                 }
                 if (day > i + 1)
                 {
@@ -397,6 +425,7 @@ public class CFrame  extends JFrame
                 else
                 {
                     c = i - day + 2;
+                    dayButtons[i].setEnabled(true);
                 }
             }
             else
@@ -409,6 +438,7 @@ public class CFrame  extends JFrame
                 if (events.checkForEvents(new Date(date.get(Calendar.YEAR),date.get(Calendar.MONTH),c-1)))
                     output = c + "*";
                 */
+                    dayButtons[i].setEnabled(true);
                 }
                 else
                 {
@@ -444,6 +474,7 @@ public class CFrame  extends JFrame
                     tempDate.set(Calendar.DATE, 1);
                     day = tempDate.get(Calendar.DAY_OF_WEEK);
                     tempDate.set(Calendar.MONTH, tempDate.get(Calendar.MONTH) - 1);
+                    dayButtons[i].setEnabled(true);
                 }
                 if (day > i + 1)
                 {
@@ -453,6 +484,7 @@ public class CFrame  extends JFrame
                 else
                 {
                     c = i - day + 2;
+                    dayButtons[i].setEnabled(true);
                 }
             }
             else
@@ -465,6 +497,7 @@ public class CFrame  extends JFrame
                 if (events.checkForEvents(new Date(date.get(Calendar.YEAR),date.get(Calendar.MONTH),c-1)))
                     output = c + "*";
                 */
+                    dayButtons[i].setEnabled(true);
                 }
                 else
                 {
