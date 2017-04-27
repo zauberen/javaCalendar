@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+
+
 /** CHandler Class
  * Assigned to: Isaac (isaacwalth)
  * Superclass to JEventIO.
@@ -37,6 +39,8 @@ import javax.swing.JTextField;
 public class CHandler extends JFrame implements ActionListener
 
 {
+	static Calendar currentDate = Calendar.getInstance();
+	
 	public int hour;
   
 	public boolean checkForEvents(Calendar date)
@@ -54,7 +58,8 @@ public class CHandler extends JFrame implements ActionListener
     {   	
     	Set<String> keys = hash.keySet();
 		String message2 = null;
-    for(String key: keys){
+    for(String key: keys)
+    {
       message2=("your event at "+key+" is: "+hash.get(key));
 
     }
@@ -223,18 +228,40 @@ public class CHandler extends JFrame implements ActionListener
         		
         		//gets the event to submit it
         		String event =text.getText();    		
-        	hash.put(hours[hour-1], event);
+        	//hash.put(hour + "", event);
         	
-
-        		String message1=(""+hash); 		
         		
         		label.setVisible(true);
-        		label.setText(message1);    		
+        		  		
         		button.setText("edit");
         		list.setVisible(false);
         	close.setEnabled(true);
-        	
-        		
+        	String days = "";
+        	String months="";
+        String years="";
+    int day=   CHandler.currentDate.get(Calendar.DATE);
+    if(day<10)
+    {
+    	days=("0"+day);
+    }
+    else
+    {
+    	
+    }
+    int  month = CHandler.currentDate.get(Calendar.MONTH);
+    if (month<10)
+    {
+    	months=("0"+month);
+    }
+    int year=CHandler.currentDate.get(Calendar.YEAR);        	
+    String sethour = ""+hour;    	
+    if(hour<10)
+    {
+    	sethour=("0");
+    	
+    }
+        String key=(sethour+days+months+years);
+        hash.put(key, event);
         		
             }
         }));
@@ -257,20 +284,23 @@ public class CHandler extends JFrame implements ActionListener
     	
     public void editEvent(Calendar time)
     {
+    	currentDate =time;
     	CHandler aFrame= new CHandler();
+    	
     	final int width=300;
     		final int height =200;
     		aFrame.setSize(width,height);
     		aFrame.setVisible(true);
     		aFrame.setVisible(true);
-    		
     		time.get(hour);
     		time.isSet(hour);
     		
+    		
+    			
     	//	time.set(Calendar.HOUR_OF_DAY,hour);
-    		//	time.set(Calendar.HOUR, hash1.get(hash.get(hours[hour])));
+    			//time.set(Calendar.HOUR, hash.get(hash.get(hours[hour])));
     		
-    		
+    	
     		
     		//	time.set(Calendar.HOUR, hash.get(hours[hour]) );
     		
