@@ -1,9 +1,9 @@
 package javaCalendar;
 import java.io.*;
+import java.nio.ByteBuffer;
 import java.nio.file.*;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
-
 import static java.nio.file.StandardOpenOption.CREATE;
 
 /** JEventIO Class
@@ -18,28 +18,23 @@ public class JEventIO extends CHandler
 {
     public static void open()
     {
-    	try
-		{
-			Path path = Files.createDirectory(FileSystems.getDefault().getPath
-					("c:\\jCalendarEvents"), new FileAttribute<?>[0]);
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		Path file = Paths.get ("c:\\jCalendarEvents");
 	}
     public static void save()
     {
     	createFile();
-    	final int NUMREC = 64;
 
-    	try
-		{
 			Path file = Paths.get("C:jCalendarEvents\\");
-			String key = "";
+			String key = "dd/mm/yy/hhmm?M, " + System.getProperty("line.separator"); // waiting to work this out
+			byte[] data = key.getBytes();
+			ByteBuffer buffer = ByteBuffer.wrap(data);
+		final int NUMREC = 64;
+
+		try
+		{
 			OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
-			for(int count =0; count < NUMREC; ++count)
+			for(int count = 0; count < NUMREC; ++count)
 				// writer.write();
 			writer.close();
 
