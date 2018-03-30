@@ -1,0 +1,7 @@
+Make a marker for today's date								|  
+month/year marker is broken									| fixed
+load/save do not work										| 
+	Use json storage										| 
+	Replace hashmap stuff									| 
+add works somewhat, edit does not							| 
+need to make different buttons and clean the day view		| started

@@ -14,23 +14,25 @@ import static java.nio.file.StandardOpenOption.CREATE;
  * Functions:
  * void open(String): Reads events from the file at the given filepath.
  * void save(String): Saves events to the file at the given path.
- * Javadocs created by dandreas on 4/4/17.*/
+ * Javadocs created by dandreas on 4/4/17.
+ */
 public class JEventIO extends CHandler
 {
-	public static void open()
-	{
-		Path file = Paths.get ("c:\\users\\jCalendarEvents.txt");
+	/**
+	 * Autogen'd version UID
+	 */
+	private static final long serialVersionUID = 2107611223867266056L;
 
-		JOptionPane.showMessageDialog(null, "This be !!!!!!!! ");
-	}
-	public static void save()
+	public void open()
 	{
-		Path file = Paths.get("c:\\users\\jCalendarEvents.txt");
-		String key = "0000000000" + System.getProperty("line.separator");
-		final int RECSIZE = key.length();
+		
+	}
+	public void save()
+	{
+		
 	}
 
-	public static void createFile()
+	public void createFile()
 	{
 		Path file = Paths.get("c:\\users\\jCalendarEvents.txt");
 		String key = "0000000000" + System.getProperty("line.separator");
