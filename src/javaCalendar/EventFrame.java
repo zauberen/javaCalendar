@@ -9,8 +9,8 @@ import java.util.Set;
 
 import javax.swing.*;
 
-/** CHandler Class
- * Superclass to JEventIO.
+/** EventPanel Class
+ * Superclass to EventIO.
  * Description:
  * This class handles calendar events. It allows you to both edit and add events.
  * 
@@ -20,13 +20,13 @@ import javax.swing.*;
  * Functions:
  * [return var]			[function name]				: [description]
  * boolean				checkForEvents(Calendar)	: Checks if there are any events that occur on the given date.
- * Hashmap<String,String> getEvents(Date)				: Return all events that occur on the given date.
+ * Hashmap<String,String> getEvents(Date)			: Return all events that occur on the given date.
  * void 				editEvent(Calendar,String)	: Replaces an old event from the hashmap.
  * 
  * Javadocs created by dandreas on 4/4/17.
  */
 
-public class CHandler extends JFrame implements ActionListener
+public class EventPanel extends JFrame implements ActionListener
 {
 	/**
 	 * Autogen'd version UID
@@ -41,7 +41,7 @@ public class CHandler extends JFrame implements ActionListener
 	private HashMap<String, String> hash = new HashMap<>();
     	
     // GUI items //
-	// Label for informing users on what to do * Assigned to: Isaac (isaacwalth)
+	// Label for informing users on what to do
 	private JLabel label=new JLabel("Please select a time, and what event");
     // Text field for entering data about the event
     private JTextField text=new JTextField(20);
@@ -106,7 +106,7 @@ public class CHandler extends JFrame implements ActionListener
     	//THIS this gives the integer for the year/month/date
     	//time.get(Calendar.YEAR,MONTH,DATE),
 	  
-    CHandler()
+    EventPanel()
     {
     	super();
     	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -288,7 +288,7 @@ public class CHandler extends JFrame implements ActionListener
     public void editEvent(Calendar time)
     {
     	activeDate = time;
-    	CHandler aFrame= new CHandler();
+    	EventPanel aFrame= new EventPanel();
     	final int width=300;
     	final int height =200;
 
