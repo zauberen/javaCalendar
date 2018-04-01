@@ -4,19 +4,19 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.file.*;
 import java.nio.file.Path;
-import java.nio.file.attribute.FileAttribute;
+
 import static java.nio.file.StandardOpenOption.CREATE;
 
-/** JEventIO Class
- * Assigned to: Charles (cws2017)
- * Subclass to CHandler
- * Handles the file opening and closing operations for CHandler.
+/** EventIO Class
+ * Subclass to EventFrame
+ * Handles the file opening and closing operations for EventFrame.
  * Functions:
  * void open(String): Reads events from the file at the given filepath.
  * void save(String): Saves events to the file at the given path.
+ * TODO: Fix this whole class.
  * Javadocs created by dandreas on 4/4/17.
  */
-public class JEventIO extends CHandler
+public class EventIO extends EventFrame
 {
 	/**
 	 * Autogen'd version UID
@@ -24,16 +24,16 @@ public class JEventIO extends CHandler
 	private static final long serialVersionUID = 2107611223867266056L;
 
 	public void open()
-	{
+	{ //TODO: Fill this function
 		
 	}
 	public void save()
-	{
+	{ //TODO: Fill this function
 		
 	}
 
 	public void createFile()
-	{
+	{ //TODO: Remake this function
 		Path file = Paths.get("c:\\users\\jCalendarEvents.txt");
 		String key = "0000000000" + System.getProperty("line.separator");
 		byte[] data = key.getBytes();
@@ -51,9 +51,7 @@ public class JEventIO extends CHandler
 		catch (IOException e)
 		{
 			JOptionPane.showMessageDialog(null, "This be ??????? ");
-
 			e.printStackTrace();
-
 		}
 	}
 }

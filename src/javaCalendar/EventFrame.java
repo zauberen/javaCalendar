@@ -9,7 +9,7 @@ import java.util.Set;
 
 import javax.swing.*;
 
-/** EventPanel Class
+/** EventFrame Class
  * Superclass to EventIO.
  * Description:
  * This class handles calendar events. It allows you to both edit and add events.
@@ -26,7 +26,7 @@ import javax.swing.*;
  * Javadocs created by dandreas on 4/4/17.
  */
 
-public class EventPanel extends JFrame implements ActionListener
+public class EventFrame extends JFrame implements ActionListener
 {
 	/**
 	 * Autogen'd version UID
@@ -106,7 +106,7 @@ public class EventPanel extends JFrame implements ActionListener
     	//THIS this gives the integer for the year/month/date
     	//time.get(Calendar.YEAR,MONTH,DATE),
 	  
-    EventPanel()
+    EventFrame()
     {
     	super();
     	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -288,7 +288,7 @@ public class EventPanel extends JFrame implements ActionListener
     public void editEvent(Calendar time)
     {
     	activeDate = time;
-    	EventPanel aFrame= new EventPanel();
+    	EventFrame aFrame= new EventFrame();
     	final int width=300;
     	final int height =200;
 
