@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac18d25b-0036-4f42-a736-7be234798a7a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaCalendar/DayPanel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaCalendar/EventPanel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaCalendar/MonthPanel.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/javaCalendar/CFrame.html" afterPath="$PROJECT_DIR$/doc/javaCalendar/CFrame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/javaCalendar/class-use/CFrame.html" afterPath="$PROJECT_DIR$/doc/javaCalendar/class-use/CFrame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
-      <change beforePath="$PROJECT_DIR$/src/javaCalendar/CFrame.java" afterPath="$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaCalendar/CHandler.java" afterPath="$PROJECT_DIR$/src/javaCalendar/EventFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaCalendar/JCalendar.java" afterPath="$PROJECT_DIR$/src/javaCalendar/JavaCalendar.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaCalendar/JEventIO.java" afterPath="$PROJECT_DIR$/src/javaCalendar/EventIO.java" />
+      <change beforePath="$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java" afterPath="$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +33,7 @@
       <file leaf-file-name="EventFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1002">
+            <state relative-caret-position="595">
               <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding>
                 <element signature="e#2117#2118#0" expanded="true" />
@@ -58,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventIO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventIO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventIO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,23 +68,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonthPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MonthPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/MonthPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2077">
+            <state relative-caret-position="3026">
               <caret line="254" column="40" lean-forward="false" selection-start-line="254" selection-start-column="40" selection-end-line="254" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1723#2252#0" expanded="true" />
-                <element signature="e#2251#2252#0" expanded="true" />
-                <element signature="e#2289#2817#0" expanded="true" />
-                <element signature="e#2816#2817#0" expanded="true" />
-                <element signature="e#2854#3182#0" expanded="true" />
-                <element signature="e#3181#3182#0" expanded="true" />
-                <element signature="e#3219#3550#0" expanded="true" />
-                <element signature="e#3549#3550#0" expanded="true" />
-                <element signature="e#4355#5434#0" expanded="true" />
-                <element signature="e#5433#5434#0" expanded="true" />
                 <element signature="method#fillCalendar#0;class#MonthPanel#0" expanded="false" />
               </folding>
             </state>
@@ -104,14 +84,10 @@
       <file leaf-file-name="DayPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/DayPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1055">
-              <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+            <state relative-caret-position="867">
+              <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#940#1228#0" expanded="true" />
-                <element signature="e#1227#1228#0" expanded="true" />
-                <element signature="e#1265#1521#0" expanded="true" />
-                <element signature="e#1520#1521#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,8 +96,8 @@
       <file leaf-file-name="CalendarFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="-203">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,9 +151,9 @@
         <option value="$PROJECT_DIR$/src/javaCalendar/EventIO.java" />
         <option value="$PROJECT_DIR$/src/javaCalendar/EventFrame.java" />
         <option value="$PROJECT_DIR$/src/javaCalendar/EventPanel.java" />
-        <option value="$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java" />
         <option value="$PROJECT_DIR$/src/javaCalendar/DayPanel.java" />
         <option value="$PROJECT_DIR$/src/javaCalendar/MonthPanel.java" />
+        <option value="$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java" />
       </list>
     </option>
   </component>
@@ -205,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +206,7 @@
       <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,6 +476,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1602" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1765464" sideWeight="0.49484536" order="10" side_tool="false" content_ui="tabs" />
@@ -515,7 +492,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13" sideWeight="0.5730769" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32860824" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -529,6 +505,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32860824" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -926,27 +903,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/javaCalendar/JCalendar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/javaCalendar/JCalendar.class" />
     <entry file="file://$PROJECT_DIR$/src/javaCalendar/JEvent.java" />
     <entry file="file://$PROJECT_DIR$/src/javaCalendar/ALload.java" />
     <entry file="jar:///usr/lib/jvm/java-8-jdk/src.zip!/javax/swing/JButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="78" column="13" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaCalendar/JavaCalendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,43 +921,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaCalendar/DayPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1055">
-          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#940#1228#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-            <element signature="e#1265#1521#0" expanded="true" />
-            <element signature="e#1520#1521#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1002">
+        <state relative-caret-position="595">
           <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
           <folding>
             <element signature="e#2117#2118#0" expanded="true" />
@@ -1004,10 +933,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaCalendar/JavaCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaCalendar/CalendarFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="-203">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1016,21 +963,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaCalendar/MonthPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2077">
+        <state relative-caret-position="3026">
           <caret line="254" column="40" lean-forward="false" selection-start-line="254" selection-start-column="40" selection-end-line="254" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1723#2252#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2289#2817#0" expanded="true" />
-            <element signature="e#2816#2817#0" expanded="true" />
-            <element signature="e#2854#3182#0" expanded="true" />
-            <element signature="e#3181#3182#0" expanded="true" />
-            <element signature="e#3219#3550#0" expanded="true" />
-            <element signature="e#3549#3550#0" expanded="true" />
-            <element signature="e#4355#5434#0" expanded="true" />
-            <element signature="e#5433#5434#0" expanded="true" />
             <element signature="method#fillCalendar#0;class#MonthPanel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaCalendar/DayPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaCalendar/EventIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

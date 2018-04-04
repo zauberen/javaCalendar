@@ -29,20 +29,7 @@ public class CalendarFrame extends JFrame
 	private static final long serialVersionUID = -2609125190252367020L;
 	private final int FRAME_WIDTH = 800;
     private final int FRAME_HEIGHT = 600;
-    /* TODO: Remove after testing
-    // Panel item setup //
-    // for the calendar panel
-    private JButton load = new JButton("Load");
-    private JButton save = new JButton("Save");
-    private JButton next = new JButton("Next");
-    private JButton prev = new JButton("Previous");
-    private JLabel monthLabel = new JLabel();
-    private JLabel yearLabel = new JLabel();
-    private JButton[] dayButtons = {new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton(),new JButton()};
-    // for the event panel
-    private JButton newEvent = new JButton("New/Edit");
-    private JButton back = new JButton("Back");
-    */
+
     // Panel setup //
     // CardPanel setup
     private JPanel cardPanel = new JPanel(new CardLayout()); // Holds the calendar and event panels
