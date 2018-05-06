@@ -46,7 +46,6 @@ public class EventIO extends EventFrame
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
 			for(int count = 0; count < NUMREC; ++count) writer.write(key, 0, key.length());
 			writer.close();
-
 		}
 		catch (IOException e)
 		{

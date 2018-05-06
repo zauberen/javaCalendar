@@ -5,7 +5,7 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EventPanel
+public class EventPanel extends JPanel
 {
 
 }
